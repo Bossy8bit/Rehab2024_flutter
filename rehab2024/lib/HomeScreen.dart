@@ -1,20 +1,20 @@
 
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:rehab2024/CustomScaffold.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
+import 'CustomScaffold.dart';
 
 class HomeScreen extends StatelessWidget {
+   final Function(Locale) changeLanguage;
+
+  HomeScreen({required this.changeLanguage});
   
   @override
-  
   Widget build(BuildContext context) {
     return CustomScaffold(
-      appBar: AppBar(
-        title: Text('หน้าหลัก'),
-      ),
-      title: 'หน้าหลัก',
+      changeLanguage: changeLanguage,
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child:Center(
         child: Column(
@@ -25,7 +25,7 @@ class HomeScreen extends StatelessWidget {
               onPressed: () {
                 context.go('/'); // นำทางไปที่หน้าhome
               },
-              child: Text('ไปที่หน้าHome'),
+              child:  Text(AppLocalizations.of(context)!.gotohome)
             ),
 
             SizedBox(height: 10),

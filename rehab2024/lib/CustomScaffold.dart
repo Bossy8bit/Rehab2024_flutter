@@ -1,51 +1,34 @@
-
 import 'package:flutter/material.dart';
-// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
-class CustomScaffold extends StatefulWidget {
-  final String title;
+class CustomScaffold extends StatelessWidget {
   final Widget body;
+  final AppBar appBar;
+  final Function(Locale) changeLanguage;
 
- CustomScaffold({required this.title, required this.body, required AppBar appBar});
-
-  @override
-  _CustomScaffoldState createState() => _CustomScaffoldState();
-}
-
-class _CustomScaffoldState extends State<CustomScaffold> {
-  Locale _locale = Locale('en'); // กำหนดค่าเริ่มต้นเป็นภาษาอังกฤษ
-
-  void _changeLanguage(Locale locale) {
-    setState(() {
-      _locale = locale;
-    });
-  }
+  CustomScaffold({
+    required this.body,
+    required this.appBar,
+    required this.changeLanguage,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Localizations.override(
-      context: context,
-      locale: _locale,
-      child: Scaffold(
-        appBar: _buildAppBar(context),
-        drawer: _buildDrawer(context), // เพิ่ม Drawer ที่นี่
-        body: widget.body,
-      ),
-    );
-  }
-
-  AppBar _buildAppBar(BuildContext context) {
-    return AppBar(
-      // title: Text(AppLocalizations.of(context)!.homeTitle),
-      title: Icon(Icons.auto_awesome_motion),
+  return Scaffold(
+    appBar: AppBar(
+      title: Text(AppLocalizations.of(context)!.mainpage),
       backgroundColor: Colors.blue,
       centerTitle: true,
       actions: [
-        _buildLanguageDropdown(),
+        _buildLanguageDropdown(), // เพิ่ม dropdown เพื่อเลือกภาษา
       ],
-    );
-  }
+    ),
+    drawer: _buildDrawer(context), // Add the drawer here
+    body: body,
+  );
+}
+
 
   Widget _buildLanguageDropdown() {
     return Padding(
@@ -54,15 +37,13 @@ class _CustomScaffoldState extends State<CustomScaffold> {
         child: DropdownButton<Locale>(
           icon: Row(
             children: [
-              Text(
-                _getFlagEmoji(_locale.languageCode), // ใช้ฟังก์ชัน _getFlagEmoji() ในการเลือกธง
-              ),
+              Icon(Icons.language, color: Colors.white),
               Icon(Icons.arrow_drop_down, color: Colors.white),
             ],
           ),
           onChanged: (Locale? newLocale) {
             if (newLocale != null) {
-              _changeLanguage(newLocale);
+              changeLanguage(newLocale); // เรียกใช้ฟังก์ชัน changeLanguage เพื่อเปลี่ยนภาษา
             }
           },
           items: [
@@ -74,16 +55,39 @@ class _CustomScaffoldState extends State<CustomScaffold> {
     );
   }
 
-  // ฟังก์ชันที่คืนค่า Emoji ของธงตามรหัสภาษา
-  String _getFlagEmoji(String languageCode) {
-    switch (languageCode) {
-      case 'en':
-        return '🇺🇸'; // ธงอเมริกา สำหรับภาษาอังกฤษ
-      case 'th':
-        return '🇹🇭'; // ธงไทย สำหรับภาษาไทย
-      default:
-        return '🌐'; // ธงโลก สำหรับภาษาที่ไม่รู้จัก
-    }
+  Widget _buildDrawer(BuildContext context) {
+    return Drawer(
+      child: ListView(
+        children: [
+          DrawerHeader(
+            decoration: BoxDecoration(color: Colors.blue),
+            child: Text(
+              AppLocalizations.of(context)!.menu,
+              style: TextStyle(color: Colors.white, fontSize: 24),
+            ),
+          ),
+          ListTile(
+            leading: Icon(Icons.home),
+            // title: Text('หน้าหลัก'),
+            title: Text(AppLocalizations.of(context)!.mainpage),
+            onTap: () {
+              Navigator.pop(context);
+              context.go('/'); // นำทางไปที่หน้าหลัก
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.details),
+            // title: Text('รายละเอียด'),
+            title: Text(AppLocalizations.of(context)!.details),
+            onTap: () {
+              Navigator.pop(context);
+              context.go('/details'); // นำทางไปที่หน้ารายละเอียด
+            },
+          ),
+          // สามารถเพิ่มรายการอื่น ๆ ได้ตามต้องการ
+        ],
+      ),
+    );
   }
 
   DropdownMenuItem<Locale> _buildDropdownMenuItem(Locale locale, String flag, String text) {
@@ -98,38 +102,4 @@ class _CustomScaffoldState extends State<CustomScaffold> {
       ),
     );
   }
-
-  Widget _buildDrawer(BuildContext context) {
-    return Drawer(
-      child: ListView(
-        children: [
-          DrawerHeader(
-            decoration: BoxDecoration(color: Colors.blue),
-            child: Text(
-              'เมนู',
-              style: TextStyle(color: Colors.white, fontSize: 24),
-            ),
-          ),
-          ListTile(
-            leading: Icon(Icons.home),
-            title: Text('หน้าหลัก'),
-            onTap: () {
-              Navigator.pop(context);
-              context.go('/'); // นำทางไปที่หน้าหลัก
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.details),
-            title: Text('รายละเอียด'),
-            onTap: () {
-              Navigator.pop(context);
-              context.go('/details'); // นำทางไปที่หน้ารายละเอียด
-            },
-          ),
-          // สามารถเพิ่มรายการอื่น ๆ ได้ตามต้องการ
-        ],
-      ),
-    );
-  }
 }
-
