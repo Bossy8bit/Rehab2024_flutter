@@ -1,11 +1,16 @@
 {
     "helloworld":"helloworld",
-    "mainpage":"mainpage",
-    "menu":"menu",
+    
+    "menu":"Menu",
     "details":"details",
-    "gotohome":"gotohome"
+    "gotohome":"gotohome",
 
-
+    "mainpage": "Main Page",
+    "myProfile": "My Profile",
+    "myPatients": "My Patients",
+    "favoriteExercise": "Favorite Exercise",
+    "exerciseList": "Exercise List",
+    "qrCode": "QR Code"
 
     
 }

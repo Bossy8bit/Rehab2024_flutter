@@ -1,7 +1,13 @@
 {
-    "helloworld":"สวัสดี",
-    "mainpage":"หน้าหลัก",
+    
     "menu":"เมนู",
     "details":"รายละเอียด",
-    "gotohome":"ไปที่หน้าโฮม"
+    "gotohome":"ไปที่หน้าโฮม",
+
+    "mainpage": "หน้าหลัก",
+    "myProfile": "โปรไฟล์ของฉัน",
+    "myPatients": "ผู้ป่วยของฉัน",
+    "favoriteExercise": "การออกกำลังกายที่ชื่นชอบ",
+    "exerciseList": "รายการออกกำลังกาย",
+    "qrCode": "รหัส QR"
 }

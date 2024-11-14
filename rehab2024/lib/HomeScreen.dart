@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 import 'CustomScaffold.dart';
+import 'MenuButton.dart';
 
 class HomeScreen extends StatelessWidget {
    final Function(Locale) changeLanguage;
@@ -15,32 +16,46 @@ class HomeScreen extends StatelessWidget {
     return CustomScaffold(
       changeLanguage: changeLanguage,
       appBar: AppBar(),
-      body: SingleChildScrollView(
-        child:Center(
+      body:  Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height,
+        padding: const EdgeInsets.all(16.0),
         child: Column(
-          mainAxisSize: MainAxisSize.min,
-          
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                context.go('/'); // นำทางไปที่หน้าhome
-              },
-              child:  Text(AppLocalizations.of(context)!.gotohome)
+              MenuButton(
+              icon: Icons.person, 
+              text: AppLocalizations.of(context)!.myProfile, // Localized text
+              color: Color.fromRGBO(129, 194, 214, 1), 
+              routePath: '/profile'
             ),
-
-            SizedBox(height: 10),
-            
-            ElevatedButton(
-              onPressed: () {
-                context.go('/star'); // นำทางไปที่หน้าstar
-              },
-              child: Text('ไปที่หน้าstar'),
+            MenuButton(
+              icon: Icons.people, 
+              text: AppLocalizations.of(context)!.myPatients, // Localized text
+              color: Color.fromRGBO(225, 148, 203, 1), 
+              routePath: '/patients'
             ),
-            
-            ],
-          ),
+            MenuButton(
+              icon: Icons.star, 
+              text: AppLocalizations.of(context)!.favoriteExercise, // Localized text
+              color: Color.fromRGBO(223, 176, 99, 1), 
+              routePath: '/favorite-exercise'
+            ),
+            MenuButton(
+              icon: Icons.fitness_center, 
+              text: AppLocalizations.of(context)!.exerciseList, // Localized text
+              color: const Color.fromRGBO(159, 158, 245, 1), 
+              routePath: '/exercise-list'
+            ),
+            MenuButton(
+              icon: Icons.qr_code, 
+              text: AppLocalizations.of(context)!.qrCode, // Localized text
+              color: const Color.fromRGBO(129, 194, 214, 1), 
+              routePath: '/qr-code'
+            ),
+                    ],
         ),
-      )
+      ),
     );
   }
 }
