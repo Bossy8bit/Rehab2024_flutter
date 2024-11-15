@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
+
+// ignore: must_be_immutable
 class CustomScaffold extends StatelessWidget {
   final Widget body;
   final AppBar appBar;
@@ -12,18 +14,22 @@ class CustomScaffold extends StatelessWidget {
     required this.appBar,
     required this.changeLanguage,
   });
-
+  
+  Locale currentLocale = Locale('en');// Current locale for the dropdown (assume English is default)
+  
+  
   @override
   Widget build(BuildContext context) {
   return Scaffold(
     appBar: AppBar(
-      title: Text(AppLocalizations.of(context)!.mainpage),
+       title: Icon(Icons.home, size: 30.0, color: Colors.white),
       backgroundColor: Colors.blue,
       centerTitle: true,
       actions: [
         _buildLanguageDropdown(), // เพิ่ม dropdown เพื่อเลือกภาษา
       ],
     ),
+
     drawer: _buildDrawer(context), // Add the drawer here
     body: body,
   );
@@ -40,6 +46,7 @@ class CustomScaffold extends StatelessWidget {
               Icon(Icons.language, color: Colors.white),
               Icon(Icons.arrow_drop_down, color: Colors.white),
             ],
+            
           ),
           onChanged: (Locale? newLocale) {
             if (newLocale != null) {

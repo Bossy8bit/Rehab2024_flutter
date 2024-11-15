@@ -35,8 +35,8 @@ class MenuButton extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Icon(icon, color: Colors.white, size: 42),
-               
-                Text(
+               Flexible(
+                child: Text(
                   text,
                   style: TextStyle(
                     color: Colors.white,
@@ -44,7 +44,10 @@ class MenuButton extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                   textAlign: TextAlign.center,
-                ),
+                  softWrap: true,
+                  overflow: TextOverflow.visible,
+                ),)
+                
               ],
             ),
           ),
