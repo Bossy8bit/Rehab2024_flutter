@@ -78,7 +78,7 @@ class CustomScaffold extends StatelessWidget {
             // title: Text('หน้าหลัก'),
             title: Text(AppLocalizations.of(context)!.mainpage),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.popUntil(context, (route) => route.isFirst); 
               context.go('/'); // นำทางไปที่หน้าหลัก
             },
           ),
@@ -87,7 +87,7 @@ class CustomScaffold extends StatelessWidget {
             // title: Text('รายละเอียด'),
             title: Text(AppLocalizations.of(context)!.details),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.popUntil(context, (route) => route.isFirst); 
               context.go('/details'); // นำทางไปที่หน้ารายละเอียด
             },
           ),

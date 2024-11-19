@@ -3,11 +3,16 @@
     "menu":"เมนู",
     "details":"รายละเอียด",
     "gotohome":"ไปที่หน้าโฮม",
-
     "mainpage": "หน้าหลัก",
+    
     "myProfile": "โปรไฟล์ของฉัน",
     "myPatients": "ผู้ป่วยของฉัน",
-    "favoriteExercise": "การออกกำลังกายที่ชื่นชอบ",
-    "exerciseList": "รายการออกกำลังกาย",
-    "qrCode": "รหัส QR"
+    "favoriteExercise": "สร้างใบสั่งใหม่",
+    "exerciseList": "รายการท่า",
+    "qrCode": "คิวอาร์โค้ด",
+
+    "byAnatomy": "ตามโครงสร้าง",
+    "bySymtoms": "ตามอาการ",
+    "byFavorite": "ตามรายกสรชื่นชอบ",
+    "addExercise": "เพิ่มท่ารายการ"
 }

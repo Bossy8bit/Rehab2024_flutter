@@ -4,10 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:rehab2024/CustomScaffold.dart';
+
+
+import 'ExerciseList.dart';
 import 'HomeScreen.dart';
 
-import 'MenuButton.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,10 +37,11 @@ final GoRouter _router = GoRouter(
       path: '/',
       builder: (context, state) => HomeScreen(changeLanguage: _changeLanguage,),
     ),
-    // GoRoute(
-    //   path: '/form',
-    //   builder: (context, state) => FormExample(changeLanguage: _changeLanguage,),
-    // ),
+    GoRoute(
+      path: '/exercise-list',
+      builder: (context, state) => Exerciselist(changeLanguage: _changeLanguage,),
+    ),
+    
     
   ],
 );
