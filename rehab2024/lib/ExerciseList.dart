@@ -87,7 +87,7 @@ class Exerciselist extends StatelessWidget {
           children: [
 
             CustomButtonContainer(
-              assetPath: 'lib/assets/svg_icons/head_button_icon5.svg',
+              assetPath: 'lib/assets/svg_icons/Magnifying glasss.svg',
               title: AppLocalizations.of(context)!.exerciseList,
               routePath: '/profile',
               color: Color.fromRGBO(135, 214, 139, 1),
@@ -112,7 +112,7 @@ class Exerciselist extends StatelessWidget {
               color: Color.fromRGBO(223, 175, 100, 1),
             ),
              CustomButtonContainer(
-              assetPath:'lib/assets/svg_icons/by_symptom_icon1.svg',
+              assetPath:'lib/assets/svg_icons/plus.svg',
               title: AppLocalizations.of(context)!.addExercise, // Localized text
               routePath: '/qrcode',
               color:Color.fromRGBO(1, 1, 1, 1),

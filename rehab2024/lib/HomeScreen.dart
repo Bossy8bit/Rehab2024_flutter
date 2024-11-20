@@ -51,7 +51,7 @@ class HomeScreen extends StatelessWidget {
               color: Color.fromRGBO(160, 158, 245, 1),
             ),
              CustomButtonContainer(
-              assetPath:'lib/assets/svg_icons/by_symptom_icon1.svg',
+              assetPath:'lib/assets/svg_icons/QRcode.svg',
               title: AppLocalizations.of(context)!.qrCode, // Localized text
               routePath: '/qrcode',
               color:Color.fromRGBO(128, 194, 214, 1),

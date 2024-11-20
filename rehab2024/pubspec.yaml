@@ -75,3 +75,7 @@ flutter:
     - lib/assets/svg_icons/icon_help_5.svg
     - lib/assets/svg_icons/icon_help_6.svg
 
+    - lib/assets/svg_icons/Magnifying glasss.svg
+    - lib/assets/svg_icons/plus.svg
+    - lib/assets/svg_icons/QRcode.svg
+
