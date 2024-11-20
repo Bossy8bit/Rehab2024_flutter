@@ -81,6 +81,7 @@ class Exerciselist extends StatelessWidget {
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
         padding: const EdgeInsets.all(16.0),
+        child:SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -119,6 +120,7 @@ class Exerciselist extends StatelessWidget {
             
                     ],
         ),
+        )
       ),
     );
   }
