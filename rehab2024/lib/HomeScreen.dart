@@ -21,6 +21,7 @@ class HomeScreen extends StatelessWidget {
       body:  Container(
         width: double.infinity,
         height: MediaQuery.of(context).size.height,
+        child:SingleChildScrollView(
         child: Column(
              
           children: [
@@ -40,7 +41,7 @@ class HomeScreen extends StatelessWidget {
             CustomButtonContainer(
               assetPath:'lib/assets/svg_icons/head_button_icon2.svg',
               title: AppLocalizations.of(context)!.favoriteExercise, // Localized text
-              routePath: '/svgimage',
+              routePath: '/favorite',
               color: Color.fromRGBO(223, 175, 100, 1),
             ),
             CustomButtonContainer(
@@ -61,6 +62,7 @@ class HomeScreen extends StatelessWidget {
             
                     ],
         ),
+        )
       ),
     );
   }
