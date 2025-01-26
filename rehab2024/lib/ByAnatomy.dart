@@ -1,77 +1,82 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-// import 'package:flutter/material.dart';
-// import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-// import 'package:flutter_svg/flutter_svg.dart';
+import 'CustomButtonContainer.dart';
+import 'CustomScaffold.dart';
 
-// import 'CustomScaffold.dart';
-// import 'MenuButton.dart';
 
-// class ByAnatomy extends StatelessWidget {
-//    final Function(Locale) changeLanguage;
+class ByAnatomy extends StatelessWidget {
+   final Function(Locale) changeLanguage;
 
-//   ByAnatomy({required this.changeLanguage});
+  ByAnatomy({required this.changeLanguage});
   
-//   @override
-//   Widget build(BuildContext context) {
-//     return CustomScaffold(
-//       changeLanguage: changeLanguage,
-//       appBar: AppBar(),
-//       body:  Container(
-//         width: double.infinity,
-//         height: MediaQuery.of(context).size.height,
-//         padding: const EdgeInsets.all(16.0),
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-//           children: [
-//               MenuButton(
-//               icon: Icons.search, 
-//               text: AppLocalizations.of(context)!.exerciseList, // Localized text
-//               color: Color.fromRGBO(129, 194, 214, 1), 
-//               routePath: '/exercise-list'
-//             ),
-//             MenuButton(
-//               icon: Icons.people, 
-//               text: AppLocalizations.of(context)!.byAnatomy, // Localized text
-//               color: Color.fromRGBO(225, 148, 203, 1), 
-//               routePath: '/patients'
-//             ),
-//             MenuButton(
-//               icon: Icons.padding, 
-//               text: AppLocalizations.of(context)!.bySymtoms, // Localized text
-//               color: Color.fromRGBO(223, 176, 99, 1), 
-//               routePath: '/favorite-exercise'
-//             ),
-//             MenuButton(
-//               icon: Icons.star, 
-//               text: AppLocalizations.of(context)!.byFavorite, // Localized text
-//               color: const Color.fromRGBO(159, 158, 245, 1), 
-//               routePath: '/exercise-list'
-//             ),
-//             MenuButton(
-//               child: SvgPicture.asset(
-//                     'assets/icons/my_icon.svg',
-//                       width: 24,
-//                       height: 24,
-//                     ), 
-//               text: AppLocalizations.of(context)!.addExercise, // Localized text
-//               color: const Color.fromRGBO(129, 194, 214, 1), 
-//               routePath: '/qr-code'
-//             ),
-//             MenuButton(
-//               icon: Icons.plus_one, 
-//               text: AppLocalizations.of(context)!.addExercise, // Localized text
-//               color: const Color.fromRGBO(129, 194, 214, 1), 
-//               routePath: '/qr-code'
-//             ),
-//             MenuButton(
-//               icon: Icons.plus_one, 
-//               text: AppLocalizations.of(context)!.addExercise, // Localized text
-//               color: const Color.fromRGBO(129, 194, 214, 1), 
-//               routePath: '/qr-code'
-//             ),
-//                     ],
-//         ),
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return CustomScaffold(
+      changeLanguage: changeLanguage,
+      appBar: AppBar(),
+      body:  Container(
+        width: double.infinity,
+        height: MediaQuery.of(context).size.height,
+        padding: const EdgeInsets.all(16.0),
+        child:SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+
+            CustomButtonContainer(
+              assetPath: 'lib/assets/svg_icons/head_button_icon9.svg',
+              title: AppLocalizations.of(context)!.neck,
+              routePath: '/profile',
+              color: Color.fromRGBO(4, 123, 10, 1),
+            ),
+            
+            CustomButtonContainer(
+              assetPath: 'lib/assets/svg_icons/head_button_icon10.svg',
+              title: AppLocalizations.of(context)!.shoulder, // Localized text
+              routePath: '/patient',
+              color: Color.fromRGBO(6, 219, 24, 1),
+            ),
+            CustomButtonContainer(
+              assetPath:'lib/assets/svg_icons/head_button_icon11.svg',
+              title: AppLocalizations.of(context)!.arm, // Localized text
+              routePath: '/svgimage',
+              color: Color.fromRGBO(195, 179, 41, 1),
+            ),
+            CustomButtonContainer(
+              assetPath:'lib/assets/svg_icons/head_button_icon15.svg',
+              title: AppLocalizations.of(context)!.back, // Localized text
+              routePath: '/exercise-list',
+              color: Color.fromRGBO(249, 130, 2, 1),
+            ),
+             CustomButtonContainer(
+              assetPath:'lib/assets/svg_icons/head_button_icon12.svg',
+              title: AppLocalizations.of(context)!.waist, // Localized text
+              routePath: '/qrcode',
+              color:Color.fromRGBO(167, 29, 29, 1),
+            ),
+             CustomButtonContainer(
+              assetPath:'lib/assets/svg_icons/head_button_icon14.svg',
+              title: AppLocalizations.of(context)!.knee, // Localized text
+              routePath: '/qrcode',
+              color:Color.fromRGBO(163, 3, 184, 1),
+            ),
+            CustomButtonContainer(
+              assetPath:'lib/assets/svg_icons/head_button_icon16.svg',
+              title: AppLocalizations.of(context)!.ankle, // Localized text
+              routePath: '/qrcode',
+              color:Color.fromRGBO(3, 126, 241, 1),
+            ),
+            CustomButtonContainer(
+              assetPath:'lib/assets/svg_icons/head_button_icon16.svg',
+              title: AppLocalizations.of(context)!.feet, // Localized text
+              routePath: '/qrcode',
+              color:Color.fromRGBO(3, 11, 239, 1),
+            ),
+                    ],
+        ),
+        )
+      ),
+    );
+  }
+}

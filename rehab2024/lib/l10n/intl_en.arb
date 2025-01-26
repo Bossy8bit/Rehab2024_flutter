@@ -1,6 +1,5 @@
 {
    
-    
     "menu":"Menu",
     "details":"details",
     "gotohome":"gotohome",
@@ -15,6 +14,16 @@
     "byAnatomy": "ByAnatomy",
     "bySymtoms": "BySymtoms",
     "byFavorite": "ByFavorite",
-    "addExercise": "AddExercise"
+    "addExercise": "AddExercise",
+
+    "neck": "Neck",  
+    "shoulder": "Shoulder",
+    "arm": "Arm",
+    "back": "Back",
+    "waist": "Waist",
+    "knee": "Knee",
+    "ankle": "Ankle",
+    "feet": "Feet"
     
+
 }

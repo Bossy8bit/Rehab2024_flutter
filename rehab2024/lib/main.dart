@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:go_router/go_router.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-
+import 'package:rehab2024/ByAnatomy.dart';
+import 'package:rehab2024/BySymtom.dart';
 
 import 'ExerciseList.dart';
 import 'HomeScreen.dart';
@@ -80,6 +81,14 @@ class _MyAppState extends State<MyApp> {
         GoRoute(
           path: '/exercise-list',
           builder: (context, state) => Exerciselist(changeLanguage: _changeLanguage),
+        ),
+        GoRoute(
+          path: '/byanatomy',
+          builder: (context, state) => ByAnatomy(changeLanguage: _changeLanguage),
+        ),
+         GoRoute(
+          path: '/bysymtom',
+          builder: (context, state) => BySymtom(changeLanguage: _changeLanguage),
         ),
       ],
     );
