@@ -56,6 +56,13 @@ class Exerciselist extends StatelessWidget {
               routePath: '/addexercise',
               color:Color.fromRGBO(1, 1, 1, 1),
             ),
+            CustomButtonContainer(
+              assetPath:'lib/assets/svg_icons/plus.svg',
+              title: AppLocalizations.of(context)!.addExercise, // Localized text
+              routePath: '/exercisecard',
+              color:Color.fromRGBO(255, 255, 1, 1),
+            ),
+            
             
                     ],
         ),

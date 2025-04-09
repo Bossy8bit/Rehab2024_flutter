@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="rehab2024"
+        android:label="rehab2024main3"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

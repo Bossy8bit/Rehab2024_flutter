@@ -9,7 +9,7 @@ import 'CustomScaffold.dart';
 
 
 class HomeScreen extends StatelessWidget {
-   final Function(Locale) changeLanguage;
+  final Function(Locale) changeLanguage;
 
   HomeScreen({required this.changeLanguage});
   

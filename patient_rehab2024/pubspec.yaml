@@ -1,0 +1,84 @@
+name: rehab2024
+description: "A new Flutter project."
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.5.4
+
+dependencies:
+  flutter:
+    sdk: flutter
+  go_router: ^6.0.0
+  flutter_localizations:
+    sdk: flutter
+  intl: any
+  flutter_svg: ^2.0.4
+  cupertino_icons: ^1.0.8
+  permission_handler: ^10.2.0
+  qr_code_scanner:
+    path: /Users/bell/Documents/GitHub/Rehab2024_flutter/patient_rehab2024/qrcodescanner/lib/qr_code_scanner.dart
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.14.1
+  flutter_lints: ^4.0.0
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path_android: "lib/assets/icons_app/playstore.png"
+  image_path_ios: "lib/assets/icons_app/ios512.png"
+  adaptive_icon_background: "#FFFFFF" # Solid background for adaptive icons
+  adaptive_icon_foreground: "lib/assets/icons_app/playstore.png"
+  remove_alpha_ios: true
+  min_sdk_android: 21
+  web:
+    generate: true
+    image_path: "lib/assets/icons_app/ios512.png"
+    background_color: "#FFFFFF"
+    theme_color: "#000000"
+  windows:
+    generate: true
+    image_path: "lib/assets/icons_app/ios512.png"
+    icon_size: 48
+  macos:
+    generate: true
+    image_path: "lib/assets/icons_app/ios512.png"
+
+flutter:
+  generate: true
+  uses-material-design: true
+  assets:
+    - lib/assets/svg_icons/by_symptom_icon1.svg
+    - lib/assets/svg_icons/by_symptom_icon2.svg
+    - lib/assets/svg_icons/by_symptom_icon3.svg
+
+    - lib/assets/svg_icons/head_button_icon1.svg
+    - lib/assets/svg_icons/head_button_icon2.svg
+    - lib/assets/svg_icons/head_button_icon3.svg
+    - lib/assets/svg_icons/head_button_icon5.svg
+    - lib/assets/svg_icons/head_button_icon6.svg
+    - lib/assets/svg_icons/head_button_icon7.svg
+    - lib/assets/svg_icons/head_button_icon9.svg
+    - lib/assets/svg_icons/head_button_icon10.svg
+    - lib/assets/svg_icons/head_button_icon11.svg
+    - lib/assets/svg_icons/head_button_icon12.svg
+    - lib/assets/svg_icons/head_button_icon13.svg
+    - lib/assets/svg_icons/head_button_icon14.svg
+    - lib/assets/svg_icons/head_button_icon15.svg
+    - lib/assets/svg_icons/head_button_icon16.svg
+
+    - lib/assets/svg_icons/icon_help_1.svg
+    - lib/assets/svg_icons/icon_help_2.svg
+    - lib/assets/svg_icons/icon_help_3.svg
+    - lib/assets/svg_icons/icon_help_4.svg
+    - lib/assets/svg_icons/icon_help_5.svg
+    - lib/assets/svg_icons/icon_help_6.svg
+
+    - lib/assets/svg_icons/Magnifying glasss.svg
+    - lib/assets/svg_icons/plus.svg
+    - lib/assets/svg_icons/QRcode.svg
+

@@ -1,0 +1,34 @@
+{
+    
+    "menu":"เมนู",
+    "details":"รายละเอียด",
+    "gotohome":"ไปที่หน้าโฮม",
+    "mainpage": "หน้าหลัก",
+    
+    "myProfile": "โปรไฟล์ของฉัน",
+    "myPatients": "ผู้ป่วยของฉัน",
+    "favoriteExercise": "สร้างใบสั่งใหม่",
+    "exerciseList": "รายการท่า",
+    "qrCode": "คิวอาร์โค้ด",
+    "ratingScreen": "หน้าประเมิน",
+    "myPrescription": "ใบสั่งท่า",
+    "myProgress": "ความคืบหน้า",
+
+    "byAnatomy": "ตามโครงสร้าง",
+    "bySymtoms": "ตามอาการ",
+    "byFavorite": "ตามรายกสรชื่นชอบ",
+    "addExercise": "เพิ่มท่ารายการ",
+
+    "neck": "คอ",
+    "shoulder": "หัวไหล่",
+    "arm": "แขน",
+    "back": "หลัง",
+    "waist": "สะโพก",
+    "knee": "เข่า",
+    "ankle": "ข้อเท้า",
+    "feet": "เท้า",
+
+    "cameraPermission":"กรุณาอนุญาติสิทธ์เพื่อการเข้าถึงกล้อง",
+    "scanQrcode":"สแกน QR Code",
+    "scannedData":"สแกน ข้อมูล"
+}

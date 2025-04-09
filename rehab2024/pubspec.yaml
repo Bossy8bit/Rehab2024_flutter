@@ -16,12 +16,16 @@ dependencies:
   intl: any
   flutter_svg: ^2.0.4
   cupertino_icons: ^1.0.8
+  hive_flutter: ^1.1.0
+  hive: ^2.2.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_launcher_icons: ^0.14.1
   flutter_lints: ^4.0.0
+  hive_generator: ^2.0.0
+  build_runner: ^2.3.3
 
 flutter_launcher_icons:
   android: true
@@ -79,3 +83,8 @@ flutter:
     - lib/assets/svg_icons/plus.svg
     - lib/assets/svg_icons/QRcode.svg
 
+    - lib/assets/default.png
+
+    - lib/assets/HTMLres/AnAS01-1.png
+    - lib/assets/HTMLres/AnAS01-2.png
+    - lib/assets/HTMLres/AnAS01-3.png

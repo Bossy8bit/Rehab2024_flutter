@@ -1,0 +1,35 @@
+{
+   
+    "menu":"Menu",
+    "details":"details",
+    "gotohome":"gotohome",
+    "mainpage": "Main Page",
+    
+    "myProfile": "My Profile",
+    "myPatients": "My Patients",
+    "favoriteExercise": "Favorite Exercise",
+    "exerciseList": "Exercise List",
+    "qrCode": "QR Code",
+
+    "byAnatomy": "ByAnatomy",
+    "bySymtoms": "BySymtoms",
+    "byFavorite": "ByFavorite",
+    "addExercise": "AddExercise",
+
+    "neck": "Neck",  
+    "shoulder": "Shoulder",
+    "arm": "Arm",
+    "back": "Back",
+    "waist": "Waist",
+    "knee": "Knee",
+    "ankle": "Ankle",
+    "feet": "Feet",
+
+    "cameraPermission":"Camera permission is required to scan QR codes.",
+    "scanQrcode":"Scan a QR Code",
+    "scannedData":"Scanned Data",
+
+    "noExerciseAvailable":"No exercise available",
+    "searchwithHNorName":"Search with HN or name-surname"
+   
+}
