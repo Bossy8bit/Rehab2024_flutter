@@ -49,93 +49,72 @@ class _HipScreenState extends State<HipScreen> {
     }
   }
 
-  // void _applyFilters() {
-  //   setState(() {
-  //     _filteredExercises = _hipExercises.where((exercise) {
-  //       // Filter by type
-  //       final title = exercise.title.toLowerCase();
-  //       final description = exercise.description.toLowerCase();
-  //       final titleThai = exercise.title;
-  //       final descriptionThai = exercise.description;
-
-  //       final matchesType = _isStretch
-  //           ? title.contains('stretch') ||
-  //             title.contains('stretching') ||
-  //             description.contains('stretch') ||
-  //             titleThai.contains('ยืด') ||
-  //             descriptionThai.contains('ยืด')
-  //           : title.contains('strengthen') ||
-  //             title.contains('strength') ||
-  //             description.contains('strengthen') ||
-  //             titleThai.contains('เสริมแรง') ||
-  //             descriptionThai.contains('เสริมแรง');
-
-  //       final matchesSide = _isRight
-  //           ? title.contains('right') ||
-  //             description.contains('right') ||
-  //             titleThai.contains('ขวา') ||
-  //             descriptionThai.contains('ขวา') ||
-  //             (!title.contains('left') &&
-  //              !description.contains('left') &&
-  //              !titleThai.contains('ซ้าย') &&
-  //              !descriptionThai.contains('ซ้าย'))
-  //           : title.contains('left') ||
-  //             description.contains('left') ||
-  //             titleThai.contains('ซ้าย') ||
-  //             descriptionThai.contains('ซ้าย');
-
-  //       return matchesType && matchesSide;
-  //     }).toList();
-  //   });
-  // }
   
-void _applyFilters() {
-  setState(() {
-    _filteredExercises = _hipExercises.where((exercise) {
-      final title = exercise.title.toLowerCase();
-      final description = exercise.description.toLowerCase();
-      final titleThai = exercise.title;
-      final descriptionThai = exercise.description;
+  
+// void _applyFilters() {
+//   setState(() {
+//     _filteredExercises = _hipExercises.where((exercise) {
+//       final title = exercise.title.toLowerCase();
+//       final description = exercise.description.toLowerCase();
+//       final titleThai = exercise.title;
+//       final descriptionThai = exercise.description;
 
-      // 1. Filter by type
-      final matchesType = _isStretch
-          ? title.contains('stretch') ||
-            title.contains('stretching') ||
-            description.contains('stretch') ||
-            titleThai.contains('ยืด') ||
-            descriptionThai.contains('ยืด')
-          : title.contains('strengthen') ||
-            title.contains('strength') ||
-            description.contains('strengthen') ||
-            titleThai.contains('เสริมแรง') ||
-            descriptionThai.contains('เสริมแรง');
+//       // 1. Filter by type
+//       final matchesType = _isStretch
+//           ? title.contains('stretch') ||
+//             title.contains('stretching') ||
+//             description.contains('stretch') ||
+//             titleThai.contains('ยืด') ||
+//             descriptionThai.contains('ยืด')
+//           : title.contains('strengthen') ||
+//             title.contains('strength') ||
+//             description.contains('strengthen') ||
+//             titleThai.contains('เสริมแรง') ||
+//             descriptionThai.contains('เสริมแรง');
 
-      // 2. Check whether the text contains any left/right keywords
-      final containsRight = title.contains('right') ||
-                            description.contains('right') ||
-                            titleThai.contains('ขวา') ||
-                            descriptionThai.contains('ขวา');
+//       // 2. Check whether the text contains any left/right keywords
+//       final containsRight = title.contains('right') ||
+//                             description.contains('right') ||
+//                             titleThai.contains('ขวา') ||
+//                             descriptionThai.contains('ขวา');
 
-      final containsLeft = title.contains('left') ||
-                           description.contains('left') ||
-                           titleThai.contains('ซ้าย') ||
-                           descriptionThai.contains('ซ้าย');
+//       final containsLeft = title.contains('left') ||
+//                            description.contains('left') ||
+//                            titleThai.contains('ซ้าย') ||
+//                            descriptionThai.contains('ซ้าย');
 
-      // 3. If no side is mentioned → allow for both left/right
-      final noSideMentioned = !containsLeft && !containsRight;
+//       // 3. If no side is mentioned → allow for both left/right
+//       final noSideMentioned = !containsLeft && !containsRight;
 
-      // 4. Filter by side
-      final matchesSide = noSideMentioned
-          ? true
-          : _isRight
-              ? containsRight
-              : containsLeft;
+//       // 4. Filter by side
+//       final matchesSide = noSideMentioned
+//           ? true
+//           : _isRight
+//               ? containsRight
+//               : containsLeft;
 
-      return matchesType && matchesSide;
-    }).toList();
-  });
-}
+//       return matchesType && matchesSide;
+//     }).toList();
+//   });
+// }
 
+ void _applyFilters() {
+    setState(() {
+      _filteredExercises = _hipExercises.where((exercise) {
+        // Check exercise type (stretch/strengthen)
+        final matchesType = _isStretch
+            ? exercise.extype?.toLowerCase() == 'f'  // 'f' for stretch
+            : exercise.extype?.toLowerCase() == 's'; // 's' for strengthen
+
+        // Check side (left/right/all)
+        final matchesSide = _isRight
+            ? exercise.side?.toLowerCase() == 'r' || exercise.side?.toLowerCase() == 'a' // 'r' for right, 'a' for all
+            : exercise.side?.toLowerCase() == 'l' || exercise.side?.toLowerCase() == 'a'; // 'l' for left, 'a' for all
+
+        return matchesType && matchesSide;
+      }).toList();
+    });
+  }
   Widget _buildFilterButtons() {
     return Container(
       padding: const EdgeInsets.all(16.0),

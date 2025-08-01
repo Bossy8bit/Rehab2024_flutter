@@ -13,6 +13,7 @@ class Exercise {
   final String? wdumbel;
   final String? wsandbag;
   final String? ytEmbed;
+  final String? extype;
 
   Exercise({
     required this.id,
@@ -29,6 +30,7 @@ class Exercise {
     this.wdumbel,
     this.wsandbag,
     this.ytEmbed,
+    this.extype
   });
 
   factory Exercise.fromMap(Map<String, dynamic> map) {
@@ -73,6 +75,7 @@ class Exercise {
       duration: int.tryParse(map['exer_Repeat']?.toString() ?? ''),
       repetitions: int.tryParse(map['exer_NumofTimes']?.toString() ?? ''),
       bodyPart: map['exer_BodyPart'] as String?,
+      extype: map['exer_Type'] as String?,
       symptom: map['exer_Symptom'] as String?,
       side: map['exer_Side'] as String?,
       freeze: map['exer_Freeze'] as String?,
@@ -92,6 +95,7 @@ class Exercise {
       'exer_Repeat': duration,
       'exer_NumofTimes': repetitions,
       'exer_BodyPart': bodyPart,
+      'exer_Type': extype,
       'exer_Side': side,
       'exer_Freeze': freeze,
       'exer_Wdumbel': wdumbel,

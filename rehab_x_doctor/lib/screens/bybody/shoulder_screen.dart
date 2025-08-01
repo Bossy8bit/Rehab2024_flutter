@@ -58,39 +58,15 @@ class _ShoulderScreenState extends State<ShoulderScreen> {
   void _applyFilters() {
     setState(() {
       _filteredExercises = _shoulderExercises.where((exercise) {
-        // Filter by exercise type (stretch/strengthen)
-        bool matchesType = true;
-        if (_isStretch) {
-          matchesType = exercise.title.toLowerCase().contains('stretch') ||
-                       exercise.title.toLowerCase().contains('stretching') ||
-                       exercise.description.toLowerCase().contains('stretch') ||
-                       exercise.title.contains('ยืด') ||
-                       exercise.description.contains('ยืด');
-        } else {
-          matchesType = exercise.title.toLowerCase().contains('strengthen') ||
-                       exercise.title.toLowerCase().contains('strength') ||
-                       exercise.description.toLowerCase().contains('strengthen') ||
-                       exercise.title.contains('เสริมแรง') ||
-                       exercise.description.contains('เสริมแรง');
-        }
+        // Check exercise type (stretch/strengthen)
+        final matchesType = _isStretch
+            ? exercise.extype?.toLowerCase() == 'f'  // 'f' for stretch
+            : exercise.extype?.toLowerCase() == 's'; // 's' for strengthen
 
-        // Filter by side (right/left)
-        bool matchesSide = true;
-        if (_isRight) {
-          matchesSide = exercise.title.toLowerCase().contains('right') ||
-                       exercise.description.toLowerCase().contains('right') ||
-                       exercise.title.contains('ขวา') ||
-                       exercise.description.contains('ขวา') ||
-                       (!exercise.title.toLowerCase().contains('left') &&
-                        !exercise.description.toLowerCase().contains('left') &&
-                        !exercise.title.contains('ซ้าย') &&
-                        !exercise.description.contains('ซ้าย'));
-        } else {
-          matchesSide = exercise.title.toLowerCase().contains('left') ||
-                       exercise.description.toLowerCase().contains('left') ||
-                       exercise.title.contains('ซ้าย') ||
-                       exercise.description.contains('ซ้าย');
-        }
+        // Check side (left/right/all)
+        final matchesSide = _isRight
+            ? exercise.side?.toLowerCase() == 'r' || exercise.side?.toLowerCase() == 'a' // 'r' for right, 'a' for all
+            : exercise.side?.toLowerCase() == 'l' || exercise.side?.toLowerCase() == 'a'; // 'l' for left, 'a' for all
 
         return matchesType && matchesSide;
       }).toList();
